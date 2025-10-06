@@ -3,6 +3,9 @@ const work_button = document.getElementById("work-button");
 const video_container = document.getElementById("video-container");
 const image_container = document.getElementById("image-container");
 const work_container = document.getElementById("work-container");
+const contact_container = document.getElementById("contact-container");
+const contact_button = document.getElementById("contact-button");
+
 const img = document.querySelector(".image");
 const logo = document.getElementById("logo");
 
@@ -23,6 +26,7 @@ const ButtonSelected = {
   NONE: 0,
   WORK: 1,
   STILL: 2,
+  CONTACT: 3,
 };
 let selectedButton = ButtonSelected.NONE;
 
@@ -39,20 +43,23 @@ logo.addEventListener("click", () => {
   image_container.style.display = "none";
   work_container.style.display = "none";
   video_container.style.display = "block";
+  contact_container.style.display = "none";
 });
 
 still_button.addEventListener("click", () => {
   buttonStatus(ButtonSelected.STILL);
   if (selectedButton == ButtonSelected.STILL) {
     img.src = `images/${images[currentImageIndex]}`;
-    image_container.style.display = "block";
+    image_container.style.display = "flex";
     video_container.style.display = "none";
     work_container.style.display = "none";
+    contact_container.style.display = "none";
   }
   if (selectedButton == ButtonSelected.NONE) {
     image_container.style.display = "none";
     video_container.style.display = "block";
     work_container.style.display = "none";
+    contact_container.style.display = "none";
   }
 });
 
@@ -73,11 +80,13 @@ work_button.addEventListener("click", () => {
     work_container.style.display = "flex";
     image_container.style = "none";
     video_container.style.display = "none";
+    contact_container.style.display = "none";
   }
   if (selectedButton == ButtonSelected.NONE) {
     work_container.style.display = "none";
     video_container.style.display = "block";
     image_container.style.display = "none";
+    contact_container.style.display = "none";
   }
 });
 
@@ -115,4 +124,20 @@ works.forEach((element, index) => {
     workVideo.src = `videos/${worksVideo[index]}`;
   });
   unorderedList.appendChild(listItem);
+});
+
+contact_button.addEventListener("click", () => {
+  buttonStatus(ButtonSelected.CONTACT);
+  if (selectedButton == ButtonSelected.CONTACT) {
+    contact_container.style.display = "grid";
+    work_container.style.display = "none";
+    image_container.style = "none";
+    video_container.style.display = "none";
+  }
+  if (selectedButton == ButtonSelected.NONE) {
+    work_container.style.display = "none";
+    video_container.style.display = "block";
+    image_container.style.display = "none";
+    contact_container.style.display = "none";
+  }
 });
