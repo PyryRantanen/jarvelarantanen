@@ -125,6 +125,10 @@ footer #email a {
         width: 20%;
     }
     #video-container video {
-        width: 100%;
+        width: 80%;
+    }
+
+    #work-container #work-video {
+        width: 500px;
     }
 }
