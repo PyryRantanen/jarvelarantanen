@@ -129,7 +129,7 @@ works.forEach((element, index) => {
 contact_button.addEventListener("click", () => {
   buttonStatus(ButtonSelected.CONTACT);
   if (selectedButton == ButtonSelected.CONTACT) {
-    contact_container.style.display = "grid";
+    contact_container.style.display = "flex";
     work_container.style.display = "none";
     image_container.style = "none";
     video_container.style.display = "none";
