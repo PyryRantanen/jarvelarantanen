@@ -108,7 +108,7 @@ const worksVideoLinks = [
   "https://www.youtube.com/embed/C47foxafVIE",
 ];
 
-const iframeSettings = "?feature=oembed&showinfo=0&hd=1&autohide=1&rel=0";
+//const iframeSettings = "?feature=oembed&showinfo=0&hd=1&autohide=1&rel=0";
 const unorderedList = document.querySelector("ul");
 
 const workVideo = document.getElementById("work-video");
@@ -119,10 +119,10 @@ works.forEach((element, index) => {
   listItem.style.cursor = "pointer";
   listItem.style.listStyle = "none";
   listItem.addEventListener("mouseenter", () => {
-    workVideo.src = `${worksVideoLinks[index]}${iframeSettings}`;
+    workVideo.src = `${worksVideoLinks[index]}`;
   });
   listItem.addEventListener("click", () => {
-    workVideo.src = `${worksVideoLinks[index]}${iframeSettings}`;
+    workVideo.src = `${worksVideoLinks[index]}`;
   });
   unorderedList.appendChild(listItem);
 });
