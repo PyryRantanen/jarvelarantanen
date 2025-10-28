@@ -93,21 +93,22 @@ work_button.addEventListener("click", () => {
 const works = [
   "Blau Habitare 24",
   "Coverstory",
-  "Woodnotes K-chair",
   "Asun - Vuokko Nurmesniemi",
   "Woodnotes - Notes from the wood",
   "Asun - Skanno Home",
+  "Asun - Akola",
 ];
 
-const worksVideo = [
-  "Blau - Habitare 24.mp4",
-  "Coverstory.mp4",
-  "Woodnotes - K-tuoli.mp4",
-  "Asun - Vuokko Nurmesniemi.mp4",
-  "Woodnotes - Notes from the wood.mp4",
-  "Asun - Skanno Home.mp4",
+const worksVideoLinks = [
+  "https://www.youtube.com/embed/baug7BohTpY",
+  "https://www.youtube.com/embed/pdqjMGqWH9c",
+  "https://www.youtube.com/embed/bwf0WUOJmq4",
+  "https://www.youtube.com/embed/dg7zvflchTI",
+  "https://www.youtube.com/embed/lPn4lBFmIvo",
+  "https://www.youtube.com/embed/C47foxafVIE",
 ];
 
+const iframeSettings = "?feature=oembed&showinfo=0&hd=1&autohide=1&rel=0";
 const unorderedList = document.querySelector("ul");
 
 const workVideo = document.getElementById("work-video");
@@ -118,10 +119,10 @@ works.forEach((element, index) => {
   listItem.style.cursor = "pointer";
   listItem.style.listStyle = "none";
   listItem.addEventListener("mouseenter", () => {
-    workVideo.src = `videos/${worksVideo[index]}`;
+    workVideo.src = `${worksVideoLinks[index]}${iframeSettings}`;
   });
   listItem.addEventListener("click", () => {
-    workVideo.src = `videos/${worksVideo[index]}`;
+    workVideo.src = `${worksVideoLinks[index]}${iframeSettings}`;
   });
   unorderedList.appendChild(listItem);
 });
