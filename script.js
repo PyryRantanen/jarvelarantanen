@@ -91,7 +91,7 @@ work_button.addEventListener("click", () => {
 });
 
 const works = [
-  "Blau Habitare 24",
+  "Blau Habitare",
   "Coverstory",
   "Asun - Vuokko Nurmesniemi",
   "Woodnotes - Notes from the wood",
